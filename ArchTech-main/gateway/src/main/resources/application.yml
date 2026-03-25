@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: auth-service
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - name: Path
+                  args:
+                    pattern: /auth/register/**
+
+            - id: medicine-service
+              uri: lb://MEDICINE-SERVICE
+              predicates:
+                - name: Path
+                  args:
+                    pattern: /medicines/**
+
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - name: Path
+                  args:
+                    pattern: /orders/**
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

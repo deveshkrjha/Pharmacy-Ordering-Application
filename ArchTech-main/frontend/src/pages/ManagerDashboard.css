@@ -1,0 +1,91 @@
+.manager-dashboard {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.manager-header {
+  margin-bottom: 2rem;
+}
+
+.manager-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.manager-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.manager-loading,
+.manager-error {
+  margin: 0;
+  padding: 1rem;
+}
+
+.manager-error {
+  color: #dc2626;
+  background: #fef2f2;
+  border-radius: 8px;
+}
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.manager-card {
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.manager-card-highlight {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.manager-card-highlight .manager-card-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.manager-card-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #64748b;
+}
+
+.manager-card-value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.manager-card-value-large {
+  font-size: 2rem;
+}
+
+.manager-card-success .manager-card-value {
+  color: #059669;
+}
+
+.manager-card-warning .manager-card-value {
+  color: #d97706;
+}
+
+.manager-card-danger .manager-card-value {
+  color: #dc2626;
+}

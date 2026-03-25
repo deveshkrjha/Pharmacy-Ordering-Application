@@ -1,0 +1,237 @@
+.cart-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.cart-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-clear {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-clear:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.cart-empty {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.cart-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.cart-item-price {
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item-qty {
+  width: 3.5rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.cart-item-remove {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-item-remove:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.cart-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cart-total {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.cart-link {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.cart-link:hover {
+  color: #1d4ed8;
+}
+
+.cart-order-error {
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #dc2626;
+  background: #fef2f2;
+  border-radius: 6px;
+}
+
+.cart-prescription-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+}
+
+.cart-prescription-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.cart-prescription-desc {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #b45309;
+}
+
+.cart-prescription-list {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.cart-prescription-upload {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-prescription-upload-label {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #92400e;
+  background: #fff;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+}
+
+.cart-prescription-upload-label:hover {
+  background: #fffbeb;
+}
+
+.cart-prescription-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cart-item-rx {
+  font-size: 0.75rem;
+  color: #b45309;
+  font-weight: 500;
+}
+
+.cart-login-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.cart-place-btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-place-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.cart-place-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cart-success {
+  color: #16a34a;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}

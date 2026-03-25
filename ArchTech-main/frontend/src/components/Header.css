@@ -1,0 +1,67 @@
+/* MedixCare header — blue bar */
+.site-header {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.site-brand:hover {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.site-nav-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.site-nav-role {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.site-nav-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.site-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
