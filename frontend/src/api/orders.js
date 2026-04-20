@@ -1,7 +1,7 @@
-const API = import.meta.env.VITE_API_BASE ?? '';
+const API = import.meta.env.VITE_ORDER_API_BASE ?? '';
 
 export async function placeOrder(token, items, requiresPrescriptionApproval = false) {
-  const res = await fetch(`${API}/api/orders`, {
+  const res = await fetch(`${API}/orders`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

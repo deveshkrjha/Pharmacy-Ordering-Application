@@ -1,4 +1,4 @@
-const API = import.meta.env.VITE_API_BASE ?? '';
+const API = import.meta.env.VITE_MEDICINE_API_BASE ?? '';
 
 function headers(token) {
   const h = { 'Content-Type': 'application/json' };

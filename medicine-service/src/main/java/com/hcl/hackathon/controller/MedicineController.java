@@ -18,7 +18,7 @@ import com.hcl.hackathon.service.MedicineService;
 
 @RestController
 @RequestMapping("/medicines")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000"})
+@CrossOrigin(origins = "*")
 public class MedicineController {
 
     private final MedicineService service;

@@ -6,30 +6,25 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api/orders': {
+      '/orders': {
         target: 'http://localhost:8083',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
-      '/api/management': {
+      '/management': {
         target: 'http://localhost:8083',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
-      '/api/auth': {
+      '/auth': {
         target: 'http://localhost:8081',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
-      '/api/medicines': {
+      '/medicines': {
         target: 'http://localhost:8082',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
       '/api/prescriptions': {
         target: 'http://localhost:8082',
         changeOrigin: true,
-        // medicine-service maps to /api/prescriptions, so do not rewrite
       },
     },
   },

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.hcl.hackathon.dto.AnalyticsResponse;
 import com.hcl.hackathon.entity.Status;
@@ -12,6 +13,7 @@ import com.hcl.hackathon.repository.OrderRepository;
 
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/management")
 @RequiredArgsConstructor

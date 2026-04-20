@@ -1,7 +1,7 @@
-const API = import.meta.env.VITE_API_BASE ?? '';
+const API = import.meta.env.VITE_ORDER_API_BASE ?? '';
 
 function url(path) {
-  return `${API}/api${path}`;
+  return `${API}${path}`;
 }
 
 export async function getAnalytics(token) {

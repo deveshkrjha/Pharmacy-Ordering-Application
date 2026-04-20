@@ -1,7 +1,7 @@
-const API = import.meta.env.VITE_API_BASE ?? '';
+const API = import.meta.env.VITE_AUTH_API_BASE ?? '';
 
 export async function login(email, password) {
-  const res = await fetch(`${API}/api/auth/login`, {
+  const res = await fetch(`${API}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -21,7 +21,7 @@ export async function login(email, password) {
 }
 
 export async function register(name, email, password) {
-  const res = await fetch(`${API}/api/auth/register`, {
+  const res = await fetch(`${API}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),

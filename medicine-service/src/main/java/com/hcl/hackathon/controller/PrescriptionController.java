@@ -19,7 +19,7 @@ import com.hcl.hackathon.dto.PrescriptionUploadRequest;
 
 @RestController
 @RequestMapping("/api/prescriptions")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000"})
+@CrossOrigin(origins = "*")
 public class PrescriptionController {
 
     private final PrescriptionService service;
