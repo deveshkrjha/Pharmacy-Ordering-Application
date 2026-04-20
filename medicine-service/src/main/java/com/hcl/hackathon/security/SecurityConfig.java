@@ -20,10 +20,11 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.GET, "/medicines", "/medicines/**").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.POST, "/medicines/*/reduce").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.PUT, "/medicines/*/reduce").permitAll()
-                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/prescriptions").authenticated()
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/prescriptions", "/api/prescriptions").authenticated()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
