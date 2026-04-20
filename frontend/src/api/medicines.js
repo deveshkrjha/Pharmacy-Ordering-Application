@@ -1,10 +1,10 @@
 /**
  * Use /api so Vite proxy forwards to medicine-service (proxy matches /api/medicines)
  */
-const API_BASE = import.meta.env.VITE_API_URL ?? '/api';
+const API = import.meta.env.VITE_API_BASE ?? '';
 
 export async function getMedicines() {
-  const url = `${API_BASE}/medicines`;
+  const url = `${API}/api/medicines`;
   const res = await fetch(url);
   const contentType = res.headers.get('content-type') || '';
   if (!contentType.includes('application/json')) {
@@ -18,7 +18,6 @@ export async function getMedicines() {
   return res.json();
 }
 
-const API = import.meta.env.VITE_API_BASE ?? '';
 
 export async function addMedicine(token, medicine) {
   const res = await fetch(`${API}/api/medicines`, {
