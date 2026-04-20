@@ -9,6 +9,26 @@ import AdminPrescriptions from '../components/admin/AdminPrescriptions';
 import AdminAddMedicine from '../components/admin/AdminAddMedicine';
 import './Admin.css';
 
+const PillIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10.5 1.5l-8.5 8.5a4.95 4.95 0 1 0 7 7l8.5-8.5a4.95 4.95 0 0 0-7-7Z" />
+    <line x1="6" y1="12" x2="12" y2="6" />
+  </svg>
+);
+
+const FileIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" />
+  </svg>
+);
+
+const PlusIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+  </svg>
+);
+
 function Admin() {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
@@ -69,15 +89,18 @@ function Admin() {
   if (!isAdmin) return null;
 
   const tabs = [
-    { id: 'medicines', label: 'All Medicines' },
-    { id: 'prescriptions', label: 'Prescriptions' },
-    { id: 'add', label: 'Add Medicine' },
+    { id: 'medicines', label: 'All Medicines', icon: PillIcon },
+    { id: 'prescriptions', label: 'Prescriptions', icon: FileIcon },
+    { id: 'add', label: 'Add Medicine', icon: PlusIcon },
   ];
 
   return (
     <div className="admin-page">
       <div className="admin-header">
-        <h1 className="admin-title">Admin Dashboard</h1>
+        <div>
+          <h1 className="admin-title">Admin Dashboard</h1>
+          <p className="admin-subtitle">Manage medicines, prescriptions, and inventory</p>
+        </div>
       </div>
 
       <nav className="admin-tabs" aria-label="Dashboard sections">
@@ -88,7 +111,7 @@ function Admin() {
             className={`admin-tab ${activeTab === tab.id ? 'admin-tab-active' : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            {tab.label}
+            <tab.icon /> {tab.label}
           </button>
         ))}
       </nav>

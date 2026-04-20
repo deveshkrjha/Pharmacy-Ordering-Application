@@ -1,91 +1,175 @@
+/* ═══════════════════════════════════════════════
+   MedixCare Manager — Glassmorphic Analytics
+   ═══════════════════════════════════════════════ */
+
 .manager-dashboard {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+  animation: slideUp 0.4s var(--ease-out);
 }
 
 .manager-header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .manager-title {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.3rem;
   font-size: 1.75rem;
-  font-weight: 700;
-  color: #1e293b;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .manager-subtitle {
   margin: 0;
   font-size: 0.95rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
-.manager-loading,
+.manager-loading {
+  margin: 0;
+  padding: 2rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 .manager-error {
   margin: 0;
   padding: 1rem;
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: var(--radius-md);
 }
 
-.manager-error {
-  color: #dc2626;
-  background: #fef2f2;
-  border-radius: 8px;
-}
-
+/* ── Metrics Grid ── */
 .manager-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.25rem;
 }
 
+/* ── Metric Card ── */
 .manager-card {
-  padding: 1.25rem;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  animation: slideUp 0.5s var(--ease-out) backwards;
+  position: relative;
+  overflow: hidden;
 }
 
+.manager-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--text-muted);
+  border-radius: 3px 0 0 3px;
+  opacity: 0.3;
+}
+
+.manager-card:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── Highlight (Revenue) Card ── */
 .manager-card-highlight {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  border-color: #1d4ed8;
-  color: #fff;
+  background: var(--gradient-primary);
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.manager-card-highlight::before {
+  display: none;
+}
+
+.manager-card-highlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  animation: shimmer 3s infinite;
 }
 
 .manager-card-highlight .manager-card-label {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
 }
 
+.manager-card-highlight .manager-card-value {
+  color: #fff;
+}
+
+.manager-card-highlight:hover {
+  box-shadow: var(--shadow-glow-strong);
+}
+
+/* ── Card Labels & Values ── */
 .manager-card-label {
   margin: 0 0 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #64748b;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
 }
 
 .manager-card-value {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1e293b;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .manager-card-value-large {
-  font-size: 2rem;
+  font-size: 2.25rem;
+}
+
+/* ── Color Variants ── */
+.manager-card-success::before {
+  background: var(--success);
+  opacity: 0.8;
 }
 
 .manager-card-success .manager-card-value {
-  color: #059669;
+  color: var(--accent-light);
+}
+
+.manager-card-warning::before {
+  background: var(--warning);
+  opacity: 0.8;
 }
 
 .manager-card-warning .manager-card-value {
-  color: #d97706;
+  color: var(--warning);
+}
+
+.manager-card-danger::before {
+  background: var(--danger);
+  opacity: 0.8;
 }
 
 .manager-card-danger .manager-card-value {
-  color: #dc2626;
+  color: var(--danger);
 }
+
+/* ── Stagger cards ── */
+.manager-card:nth-child(1) { animation-delay: 0s; }
+.manager-card:nth-child(2) { animation-delay: 0.06s; }
+.manager-card:nth-child(3) { animation-delay: 0.12s; }
+.manager-card:nth-child(4) { animation-delay: 0.18s; }
+.manager-card:nth-child(5) { animation-delay: 0.24s; }
+.manager-card:nth-child(6) { animation-delay: 0.30s; }
