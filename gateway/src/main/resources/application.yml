@@ -2,6 +2,8 @@ server:
   port: ${PORT:8080}
 
 spring:
+  config:
+    "import": "optional:configserver:"
   name: api-gateway
   cloud:
     gateway:
